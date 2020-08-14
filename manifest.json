@@ -1,0 +1,25 @@
+{
+	"name": "xX_pro_extension_Xx",
+	"version": "1.0",
+	"description": "FREE V-BUCKS!!! JUST CLICK THIS LINK!!!",
+    "permissions": ["activeTab", "declarativeContent", "storage"],
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+    },
+    "page_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "192": "images/logo192.png",
+        "512": "images/logo512.png"
+      }
+    },
+	"icons": {
+		"192": "images/logo192.png",
+		"512": "images/logo512.png"
+	},
+	"chrome_url_overrides" : {
+		"newtab": "newtab.html"
+	},
+	"manifest_version": 2
+}
