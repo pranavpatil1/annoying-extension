@@ -2,7 +2,7 @@ let font = new FontFace("Alata", "url('/Alata-Regular.ttf')");
 document.fonts.add(font);
 
 var text = localStorage.getItem("notepad") || "";
-document.getElementById("notepad").innerText = text;
+document.getElementById("notepad").value = text;
 document.getElementById("notepad").oninput = (event) => {
     localStorage.setItem("notepad", event.target.value);
 }
