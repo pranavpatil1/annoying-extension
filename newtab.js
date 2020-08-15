@@ -1,3 +1,6 @@
+let font = new FontFace("Alata", "url('/Alata-Regular.ttf')");
+document.fonts.add(font);
+
 var message = "food is good";
 var num = 0;
 var interval = 10;
@@ -14,11 +17,11 @@ function mouseOn() {
 function update () {
 	if (!updating) return;
 	num ++;
-	num %= message.length * interval;
-	var dig = Math.floor(num / interval);
+	var dig = Math.floor((num % (message.length * interval)) / interval);
 	var update = message[dig];
 	if (message[dig] !== " ") update = String.fromCharCode(message.charCodeAt(dig) - 32);
-	document.getElementById("msg").innerText = message.substring(0, dig) + update + message.substring(dig + 1, message.length);
+    document.getElementById("msg").innerText = message.substring(0, dig) + update + message.substring(dig + 1, message.length);
+    document.body.style.backgroundColor = "hsl(" + (num % 360) + ", 70%, 50%)";
 }
 
 document.getElementById("main").onmouseover=mouseOn;
